@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 import { NotAuthSectionComponent } from './not-auth-section.component';
+import { QueryParams } from "@common/enums/query-params";
 
 const routes: Routes = [
   {
@@ -9,19 +10,19 @@ const routes: Routes = [
     component: NotAuthSectionComponent,
     children: [
       {
-        path: 'authorization',
+        path: QueryParams.Authorization,
         loadChildren: () => import('./pages/authorization/authorization.module')
-          .then(m => m.AuthorizationModule)
+          .then(m => m.AuthorizationModule),
       },
       {
-        path: 'registration',
+        path: QueryParams.Registration,
         loadChildren: () => import('./pages/registration/registration.module')
-          .then(m => m.RegistrationModule)
+          .then(m => m.RegistrationModule),
       },
       {
         path: '',
-        redirectTo: 'authorization'
-      }
+        redirectTo: QueryParams.Authorization,
+      },
     ]
   }
 ];

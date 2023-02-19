@@ -5,6 +5,8 @@ import { AppRoutingModule } from "./app-routing.module";
 import { HttpClientModule } from "@angular/common/http";
 import { CookieModule } from '@gorniv/ngx-universal';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ENVIRONMENT } from "@common/services/environment.service";
+import { environment } from "../environments/environment";
 
 
 @NgModule({
@@ -19,7 +21,12 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     FormsModule,
     ReactiveFormsModule,
   ],
-  providers: [],
+  providers: [
+    {
+      provide: ENVIRONMENT,
+      useValue: environment
+    },
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

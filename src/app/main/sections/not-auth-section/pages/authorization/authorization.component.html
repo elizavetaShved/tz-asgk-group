@@ -1,1 +1,27 @@
-<div>authorization</div>
+<div class="auth">
+  <div class="page-content">
+    <h1>Авторизация</h1>
+
+    <form [formGroup]="form" class="auth__form" (submit)="submit()">
+      <mat-form-field class="auth__field">
+        <mat-label>Логин</mat-label>
+        <input type="text" matInput formControlName="login" name="login" placeholder="Логин">
+        <mat-error *ngIf="form.controls.login.hasError('required')">
+          Обязательное поле
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field class="auth__field">
+        <mat-label>Пароль</mat-label>
+        <input type="password" matInput formControlName="password" name="password" placeholder="Пароль">
+        <mat-error *ngIf="form.controls.login.hasError('required')">
+          Обязательное поле
+        </mat-error>
+      </mat-form-field>
+
+      <button type="submit" mat-raised-button color="primary">Войти</button>
+      <a [routerLink]="[forgotPasswordLink]" mat-button color="primary" class="auth__forgot-password"
+      >Перейти в регистрацию</a>
+    </form>
+  </div>
+</div>

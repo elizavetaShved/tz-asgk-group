@@ -1,3 +1,10 @@
-<header class="page-content">
-  header
+<header *ngIf="sessionService.isAuth$ | async" class="header">
+  <div class="header__content page-content">
+    <button
+      type="button"
+      mat-raised-button
+      color="primary"
+      (click)="onLogout()"
+    >Выход</button>
+  </div>
 </header>

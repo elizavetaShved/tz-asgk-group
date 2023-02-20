@@ -43,4 +43,10 @@ export class AuthApiService {
       model
     );
   }
+
+  logout(): Observable<AuthorizationResponse> {
+    return this._httpClient.delete<AuthorizationResponse>(
+      `${ this._environmentService.environment.apiBaseUrl }/test-auth-only`
+    );
+  }
 }

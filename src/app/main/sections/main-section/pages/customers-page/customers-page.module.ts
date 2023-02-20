@@ -1,19 +1,19 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
-import { MySubscribersPageComponent } from './my-subscribers-page.component';
+import { CustomersPageComponent } from './customers-page.component';
 
 const routes: Routes = [
   {
     path: '',
-    component: MySubscribersPageComponent,
+    component: CustomersPageComponent,
     // resolve: {pageData$: MySubscribersPageResolve}
   }
 ];
 
 @NgModule({
   declarations: [
-    MySubscribersPageComponent
+    CustomersPageComponent
   ],
   imports: [
     CommonModule,
@@ -23,5 +23,5 @@ const routes: Routes = [
   //   MySubscribersPageResolve
   // ]
 })
-export class MySubscribersPageModule {
+export class CustomersPageModule {
 }

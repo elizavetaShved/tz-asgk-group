@@ -23,7 +23,7 @@ export class AuthorizationComponent {
     private _fb: FormBuilder,
     private _authApiService: AuthApiService,
     private _myCookiesService: MyCookiesService,
-    private _router: Router
+    private _router: Router,
   ) {
   }
 

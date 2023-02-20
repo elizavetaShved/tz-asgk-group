@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 import { MainSectionComponent } from './main-section.component';
-import { MySubscribersPageModule } from './pages/my-subscribers-page/my-subscribers-page.module';
+import { CustomersPageModule } from './pages/customers-page/customers-page.module';
 import { QueryParams } from "@common/enums/query-params";
 
 const routes: Routes = [
@@ -12,8 +12,8 @@ const routes: Routes = [
     children: [
       {
         path: QueryParams.Customers,
-        loadChildren: () => import('./pages/my-subscribers-page/my-subscribers-page.module')
-          .then(m => m.MySubscribersPageModule),
+        loadChildren: () => import('./pages/customers-page/customers-page.module')
+          .then(m => m.CustomersPageModule),
       },
       {
         path: '',
@@ -30,7 +30,7 @@ const routes: Routes = [
   imports: [
     CommonModule,
     RouterModule.forChild(routes),
-    MySubscribersPageModule
+    CustomersPageModule,
   ]
 })
 export class MainSectionModule {

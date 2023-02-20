@@ -3,18 +3,18 @@ import { BehaviorSubject } from 'rxjs';
 
 @Injectable({ providedIn: 'root' })
 export class SessionService {
-  // todo any
-  private readonly _user$ = new BehaviorSubject<any>(null);
+  private readonly _isAuth$ = new BehaviorSubject<boolean>(false);
+  readonly isAuth$ = this._isAuth$.asObservable();
 
-  setCurrentUser(user: any): void {
-    this._user$.next(user);
+  setAuthStatus(): void {
+    this._isAuth$.next(true);
   }
 
-  getCurrentUser(): any {
-    return this._user$.value;
+  getAuthStatus(): any {
+    return this._isAuth$.value;
   }
 
-  removeCurrentUser(): void {
-    this._user$.next(null);
+  removeAuthStatus(): void {
+    this._isAuth$.next(false);
   }
 }

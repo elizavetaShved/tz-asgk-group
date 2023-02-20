@@ -26,7 +26,7 @@ export interface RegistrationResponse {
 export class AuthApiService {
   constructor(
     private readonly _httpClient: HttpClient,
-    private readonly _environmentService: EnvironmentService
+    private readonly _environmentService: EnvironmentService,
   ) {
   }
 

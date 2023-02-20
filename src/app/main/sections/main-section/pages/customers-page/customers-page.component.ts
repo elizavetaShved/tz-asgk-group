@@ -12,5 +12,4 @@ export class CustomersPageComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
 }

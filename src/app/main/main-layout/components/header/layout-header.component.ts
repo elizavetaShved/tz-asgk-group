@@ -1,9 +1,8 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { MyCookiesService } from "@common/services/my-cookies.service";
-import { AuthApiService } from "@common/services/api/auth-api/auth-api.service";
+import { AuthApiService } from "@common/services/api/auth-api.service";
 import { QueryParams } from "@common/enums/query-params";
 import { Router } from "@angular/router";
-import { BehaviorSubject } from "rxjs";
 import { SessionService } from "@common/services/session.service";
 
 @Component({

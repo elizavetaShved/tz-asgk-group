@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { FormBuilder, Validators } from "@angular/forms";
 import { QueryParams } from "@common/enums/query-params";
-import { AuthApiService, AuthorizationResponse } from "@common/services/api/auth-api/auth-api.service";
+import { AuthApiService, AuthorizationResponse } from "@common/services/api/auth-api.service";
 import { MyCookiesService } from "@common/services/my-cookies.service";
 import { Router } from "@angular/router";
 

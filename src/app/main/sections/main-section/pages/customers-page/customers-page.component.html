@@ -1,5 +1,33 @@
 <div class="customers">
   <div class="page-content">
-    customers
+    <h1>Страница с клиентами</h1>
+
+    <table mat-table [dataSource]="customersList" matSort (matSortChange)="announceSortChange($event)"
+           class="mat-elevation-z8">
+
+      <ng-container matColumnDef="idCard">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header="" sortActionDescription="Сортировка по id карты">
+          id карты
+        </th>
+        <td mat-cell *matCellDef="let element"> {{element.idCard}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header="" sortActionDescription="Сортировка по имени владельца">
+          Имя
+        </th>
+        <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="phone">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header="" sortActionDescription="Сортировка по телефону">
+          Телефон
+        </th>
+        <td mat-cell *matCellDef="let element"> {{element.phone}} </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
   </div>
 </div>
